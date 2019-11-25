@@ -7,8 +7,8 @@ const twemoji = require('twemoji');
 const twOptions = { folder: 'svg', ext: '.svg' };
 const emojify = (text: string) => twemoji.parse(text, twOptions);
 
-const rglr = readFileSync(`${__dirname}/../_fonts/Inter-Regular.woff2`).toString('base64');
-const bold = readFileSync(`${__dirname}/../_fonts/Inter-Bold.woff2`).toString('base64');
+const rglr = readFileSync(`${__dirname}/../_fonts/noto-sans-tc-v9-latin_chinese-traditional-regular.woff2`).toString('base64');
+const bold = readFileSync(`${__dirname}/../_fonts/noto-sans-tc-v9-latin_chinese-traditional-700.woff2`).toString('base64');
 const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString('base64');
 
 function getCss(theme: string, fontSize: string) {
@@ -23,16 +23,16 @@ function getCss(theme: string, fontSize: string) {
     }
     return `
     @font-face {
-        font-family: 'Inter';
-        font-style:  normal;
-        font-weight: normal;
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 400;
         src: url(data:font/woff2;charset=utf-8;base64,${rglr}) format('woff2');
     }
 
     @font-face {
-        font-family: 'Inter';
-        font-style:  normal;
-        font-weight: bold;
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 700;
         src: url(data:font/woff2;charset=utf-8;base64,${bold}) format('woff2');
     }
 
@@ -95,7 +95,7 @@ function getCss(theme: string, fontSize: string) {
     }
     
     .heading {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Noto Sans TC', sans-serif;
         font-size: ${sanitizeHtml(fontSize)};
         font-style: normal;
         color: ${foreground};
