@@ -45,10 +45,10 @@ function getArray(stringOrArray: string[] | string): string[] {
 }
 
 function getDefaultImages(images: string[], theme: Theme): string[] {
-    if (images.length > 0 && images[0] && images[0].startsWith('https://hkmap.live/')) {
+    if (images.length > 0 && images[0] && images[0].startsWith('https://hkmap.live/android-chrome-512x512.png')) {
         return images;
     }
     return theme === 'light'
-    ? ['https://hkmap.live/android-chrome-192x192.png']
-    : ['https://hkmap.live/android-chrome-192x192.png'];
+    ? ['https://hkmap.live/android-chrome-512x512.png'].concat(images)
+    : ['https://hkmap.live/android-chrome-512x512.png'].concat(images);
 }
